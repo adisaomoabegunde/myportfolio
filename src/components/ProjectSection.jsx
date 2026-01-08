@@ -94,10 +94,10 @@ export const ProjectSection = () => {
                         <p className="text-muted-foreground text-sm mb-4">{project.description}</p>
                         <div className="flex justify-between items-center">
                                 <div className="flex space-x-3">
-                                    <Link to={project.demoUrl} target="_blank" className="text-foreground/80 hover:text-primary transition-colors duration-300 z-100">
+                                    <Link to={project.demoUrl} target="_blank" className="text-foreground/80 hover:text-primary transition-colors duration-300">
                                         <ExternalLink size={20}/>
                                     </Link>
-                                    <Link to={project.githubUrl} target="_blank" className="text-foreground/80 hover:text-primary transition-colors duration-300 z-100">
+                                    <Link to={project.githubUrl} target="_blank" className="text-foreground/80 hover:text-primary transition-colors duration-300">
                                         <Github size={20} />
                                     </Link>
 
@@ -109,7 +109,7 @@ export const ProjectSection = () => {
             </div>
 
             <div className="text-center mt-12">
-                <Link to={myGitUrl} target="_blank" className="cosmic-button w-fit flex items-center mx-auto gap-2 z-100" >
+                <Link to={myGitUrl} target="_blank" className="cosmic-button w-fit flex items-center mx-auto gap-2" >
                     Check My Github <ArrowRight size={16} />
                 </Link>
             </div>  
