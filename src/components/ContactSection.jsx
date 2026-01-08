@@ -2,25 +2,38 @@ import { Instagram, Linkedin, Mail, MapPin, Phone, Send, Twitch, Twitter } from 
 import { cn } from "./lib/utils"
 import { useToast } from "../hooks/use-toast"
 import { useState } from "react";
-
+import emailjs from "emailjs-com";
 
 export const ContactSection = () => {
+    const [formData, setFormData] = useState({
+        name: "",
+        email: "",
+        message: "",
+    });
     const {toast} = useToast();
     const [isSubmitting, setIsSubmitting] = useState(false);
 
-
+    const SERVICE_ID = "service_umq28ur";
+    const TEMPLATE_ID = "template_215bqbn";
+    const PUBLIC_KEY = "gNebO0RQvmE2GOiFG";
     const handleSubmit = (e) => {
         e.preventDefault();
-        setIsSubmitting(true);
 
-        setTimeout(() => {
-            toast({
-                title: "Message sent!",
-                description: "Thank you for your message. I'll get back to you soon.",
-            })
-        setIsSubmitting(false);
+        emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, e.target, PUBLIC_KEY).then((result)=> {
+             setIsSubmitting(true);
 
-        }, 1500);
+            setTimeout(() => {
+                toast({
+                    title: "Message sent!",
+                    description: "Thank you for your message. I'll get back to you soon.",
+                })
+            setIsSubmitting(false);
+
+            }, 1500);
+            setFormData({name: "", email: "", message: ""});
+
+        }).catch(()=> alert("Oops, Something went wrong, Please try again"))
+       
 
     }
     return <section id="contact" className="py-24 px-4 relative bg-secondary/30">
@@ -95,17 +108,17 @@ export const ContactSection = () => {
                     <form className="space-y-6">
                         <div>
                             <label htmlFor="name" className="block text-sm font-medium mb-2">Your Name</label>
-                            <input type="text" id="name" name="name" required className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden focus:ring-2 focus:ring-primary" placeholder="Abegunde Oluwatobiloba..." />
+                            <input type="text" id="name" name="name" required value={formData.name} className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden focus:ring-2 focus:ring-primary" placeholder="Abegunde Oluwatobiloba..." onChange={(e) => setFormData({...formData, name: e.target.value})} />
                         </div>
 
                         <div>
                             <label htmlFor="email" className="block text-sm font-medium mb-2">Your Email</label>
-                            <input type="email" id="email" name="email" required className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden focus:ring-2 focus:ring-primary" placeholder="oluwatobilobaadedapo81@gmail.com" />
+                            <input type="email" id="email" name="email" required value={formData.email} className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden focus:ring-2 focus:ring-primary" placeholder="oluwatobilobaadedapo81@gmail.com" onChange={(e) => setFormData({...formData, email: e.target.value})} />
                         </div>
 
                         <div>
                             <label htmlFor="message" className="block text-sm font-medium mb-2">Your message</label>
-                            <textarea  id="message" name="message" required className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden focus:ring-2 focus:ring-primary resize-none" placeholder="Hello, I'd like to talk about..." />
+                            <textarea  id="message" name="message" required value={formData.message} className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden focus:ring-2 focus:ring-primary resize-none" placeholder="Hello, I'd like to talk about..." onChange={(e) => setFormData({...formData, message: e.target.value})} />
                         </div>
                         <button type="submit" disabled={isSubmitting} className={cn("cosmic-button w-full flex items-center justify-center gap-2 z-100",
 
