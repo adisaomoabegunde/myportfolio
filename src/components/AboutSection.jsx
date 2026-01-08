@@ -18,8 +18,8 @@ export const AboutSection = () => {
                             I'm passionate about creating elegant solutions to complex problems, and I'm constantly learning new technologies and techniques to stay at the forefront of the ever-evolving web landscape.
                         </p>
 
-                        <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center z-10">
-                            <a href="#contact" className="cosmic-button">Get In Touch</a>
+                        <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center ">
+                            <a href="#contact" className="cosmic-button z-10">Get In Touch</a>
                             <a href=" " className="px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors duration-200">Download Cv</a>
                         </div>
                     </div>
