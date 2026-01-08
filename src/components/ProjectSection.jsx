@@ -108,9 +108,9 @@ export const ProjectSection = () => {
             </div>
 
             <div className="text-center mt-12">
-                <a className="cosmic-button w-fit flex items-center mx-auto gap-2 z-100" href="https://github.com/adisaomoabegunde" target="_blank">
+                <Link className="cosmic-button w-fit flex items-center mx-auto gap-2 z-100" to="https://github.com/adisaomoabegunde" target="_blank">
                     Check My Github <ArrowRight size={16} />
-                </a>
+                </Link>
             </div>  
         </div>
 
