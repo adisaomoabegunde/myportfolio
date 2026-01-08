@@ -20,7 +20,7 @@ export const AboutSection = () => {
 
                         <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center ">
                             <a href="#contact" className="cosmic-button z-100">Get In Touch</a>
-                            <a href=" " className="px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors duration-200">Download Cv</a>
+                            <a href=" " className="px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors duration-200 z-100">Download Cv</a>
                         </div>
                     </div>
                     <div className="grid grid-cols-1 gap-6">
