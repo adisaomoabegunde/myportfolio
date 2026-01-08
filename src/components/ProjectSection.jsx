@@ -64,6 +64,7 @@ const projects = [
     }
 ]
 
+const myGitUrl = "https://github.com/adisaomoabegunde";
 export const ProjectSection = () => {
     return <section id="projects" className="py-24 px-4 relative">
         <div className="container mx-auto max-w-5xl">
@@ -108,7 +109,7 @@ export const ProjectSection = () => {
             </div>
 
             <div className="text-center mt-12">
-                <Link to="https://github.com/adisaomoabegunde" target="_blank" className="cosmic-button w-fit flex items-center mx-auto gap-2 z-100" >
+                <Link to={myGitUrl} target="_blank" className="cosmic-button w-fit flex items-center mx-auto gap-2 z-100" >
                     Check My Github <ArrowRight size={16} />
                 </Link>
             </div>  
