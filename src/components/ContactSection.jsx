@@ -1,4 +1,4 @@
-import { Instagram, Linkedin, Mail, MapPin, Phone, Send, Twitch, Twitter } from "lucide-react"
+import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone, Send, Twitch, Twitter } from "lucide-react"
 import { cn } from "./lib/utils"
 import { useToast } from "../hooks/use-toast"
 import { useState } from "react";
@@ -86,17 +86,17 @@ export const ContactSection = () => {
                     <div className="pt-8">
                         <h4 className="font-medium mb-4">Connect With Me</h4>
                         <div className="flex space-x-4 justify-center">
-                            <a href="#" target="_blank">
+                            <a href="www.linkedin.com/in/oluwatobiloba-abegunde-9536a7270" target="_blank">
                                 <Linkedin />
                             </a>
-                             <a href="#" target="_blank">
+                             <a href="https://x.com/adedapooluwat11?s=21&t=rNDkB9IbdOPnYyMUDZdRyg" target="_blank">
                                 <Twitter />
                             </a>
-                             <a href="#" target="_blank">
+                             <a href="https://www.instagram.com/adedapo_001?igsh=aWEyNHZjanA4aDY3&utm_source=qr" target="_blank">
                                 <Instagram />
                             </a>
-                             <a href="#" target="_blank">
-                                <Twitch />
+                             <a href="https://www.facebook.com/adedapo.oluwatobiloba.7?mibextid=wwXIfr&mibextid=wwXIfr" target="_blank">
+                                <Facebook />
                             </a>
                         </div>
                     </div>
